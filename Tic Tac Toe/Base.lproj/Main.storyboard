@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TicTacToeController-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="TicTacToeController" id="vXZ-lx-hvc" customClass="ViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TicTacGrid.png" translatesAutoresizingMaskIntoConstraints="NO" id="YHd-VV-Sfm">
+                            <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TicTacGrid.png" translatesAutoresizingMaskIntoConstraints="NO" id="YHd-VV-Sfm">
                                 <rect key="frame" x="0.0" y="161" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="8Sa-Z6-TxT"/>
@@ -140,12 +140,41 @@
                                     <action selector="butttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oUo-IW-bCb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.79999999999999982" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOY-Ym-0bb">
+                                <rect key="frame" x="16" y="298" width="382" height="143"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.12898334703947367" alpha="0.89000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="382" id="OoD-2Y-Av4"/>
+                                    <constraint firstAttribute="height" constant="143" id="Zxh-y8-6vc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" alpha="0.89999999999999991" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-ue-Xug">
+                                <rect key="frame" x="130" y="449" width="144" height="72"/>
+                                <color key="backgroundColor" red="0.65589021380000001" green="1" blue="0.98591694080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="MnS-J4-icm"/>
+                                    <constraint firstAttribute="width" constant="144" id="lZ6-a2-N4Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Play Again?">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="l9u-d5-bXK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ON1-tt-2bZ" firstAttribute="leading" secondItem="YHd-VV-Sfm" secondAttribute="leading" constant="297" id="0V1-lV-PQk"/>
+                            <constraint firstItem="YHd-VV-Sfm" firstAttribute="leading" secondItem="qqL-ue-Xug" secondAttribute="leading" constant="-130" id="2kK-Ep-tUH"/>
                             <constraint firstItem="A8E-pF-mxJ" firstAttribute="leading" secondItem="YHd-VV-Sfm" secondAttribute="leading" constant="5" id="5Ls-6O-DQC"/>
                             <constraint firstItem="UJO-nn-ece" firstAttribute="leading" secondItem="YHd-VV-Sfm" secondAttribute="leading" constant="154" id="5yg-BD-SsK"/>
+                            <constraint firstItem="YHd-VV-Sfm" firstAttribute="leading" secondItem="TOY-Ym-0bb" secondAttribute="leading" constant="-16" id="7G8-1D-OWo"/>
                             <constraint firstItem="YHd-VV-Sfm" firstAttribute="top" secondItem="i2y-m3-hCJ" secondAttribute="top" constant="-153" id="CDm-tC-1oT"/>
                             <constraint firstAttribute="centerY" secondItem="YHd-VV-Sfm" secondAttribute="centerY" id="D7p-AH-CF1"/>
                             <constraint firstItem="r5g-x9-A78" firstAttribute="top" secondItem="YHd-VV-Sfm" secondAttribute="top" constant="7" id="Hpb-34-g3w"/>
@@ -156,9 +185,11 @@
                             <constraint firstItem="3mi-dr-cZy" firstAttribute="top" secondItem="YHd-VV-Sfm" secondAttribute="top" constant="7" id="PaX-PA-0xu"/>
                             <constraint firstItem="3mi-dr-cZy" firstAttribute="leading" secondItem="YHd-VV-Sfm" secondAttribute="leading" constant="297" id="X4E-Ll-zJx"/>
                             <constraint firstItem="A8E-pF-mxJ" firstAttribute="top" secondItem="YHd-VV-Sfm" secondAttribute="top" constant="301" id="XwB-Wj-FHk"/>
+                            <constraint firstItem="YHd-VV-Sfm" firstAttribute="top" secondItem="qqL-ue-Xug" secondAttribute="top" constant="-288" id="ajk-ym-fHg"/>
                             <constraint firstItem="OiB-SH-BCu" firstAttribute="leading" secondItem="YHd-VV-Sfm" secondAttribute="leading" constant="154" id="co7-xg-QBe"/>
                             <constraint firstAttribute="centerX" secondItem="YHd-VV-Sfm" secondAttribute="centerX" id="mQD-7d-bKA"/>
                             <constraint firstItem="OiB-SH-BCu" firstAttribute="top" secondItem="YHd-VV-Sfm" secondAttribute="top" constant="153" id="o6K-94-7df"/>
+                            <constraint firstItem="YHd-VV-Sfm" firstAttribute="top" secondItem="TOY-Ym-0bb" secondAttribute="top" constant="-137" id="qE3-Ex-aJx"/>
                             <constraint firstItem="YHd-VV-Sfm" firstAttribute="leading" secondItem="DUe-jr-55I" secondAttribute="leading" constant="-154" id="qff-m1-EFp"/>
                             <constraint firstItem="ON1-tt-2bZ" firstAttribute="top" secondItem="YHd-VV-Sfm" secondAttribute="top" constant="301" id="sMc-VP-7HC"/>
                             <constraint firstItem="YHd-VV-Sfm" firstAttribute="top" secondItem="DUe-jr-55I" secondAttribute="top" constant="-7" id="uEb-Nj-SlN"/>
@@ -169,6 +200,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="button0" destination="r5g-x9-A78" id="d6P-mm-rmq"/>
+                        <outlet property="label" destination="TOY-Ym-0bb" id="niU-Uw-eRp"/>
+                        <outlet property="playAgain" destination="qqL-ue-Xug" id="Tbd-4i-NiJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
